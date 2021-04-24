@@ -35,7 +35,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
     # Iniciar o projeto (Back-end)
     $ yarn server
 
-	# Iniciar o projeto (Front-end)
+    # Iniciar o projeto (Front-end)
     $ yarn dev
 ```
 
