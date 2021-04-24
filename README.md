@@ -6,9 +6,13 @@
 
 ## 🔖&nbsp; Sobre
 
-O projeto é uma aplicação web desenvolvida em react com um player de podcast, desenvolvido durante a NLW (Next Level Week) edição 5 da Rocketseat.
+O projeto é uma aplicação web desenvolvida em React com um player de podcast, feito durante a NLW (Next Level Week) edição 5 da Rocketseat.
 
-Foi adicionado loading ao trocar de rota e também dark mode.
+O projeto utiliza SSR (Server Side Rendering) do NextJS.
+
+Back-end fake utilizando json-server.
+
+Obs: Foi adicionado loading ao trocar de rota e também dark mode.
 
 ---
 
