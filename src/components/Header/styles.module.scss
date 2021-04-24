@@ -18,4 +18,28 @@
     margin-left: auto;
     text-transform: capitalize;
   }
+  
+  button {
+    background: transparent;
+    border: 0;
+    font-size: 0;
+    margin-left: 1rem;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.7);
+    }
+
+    &.dark {
+      img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(92deg) brightness(105%) contrast(102%);
+      }
+    }
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 }
