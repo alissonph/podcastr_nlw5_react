@@ -1,7 +1,14 @@
+@import '../styles/global.mixins.scss';
+
 .homePage {
   padding: 0 4rem;
   height: calc(100vh - 6.5rem);
   overflow-y: scroll;
+
+  @include responsiveMax($screen-md) {
+    padding: 0 1rem;
+    width: 100vw;
+  }
 
   h2 {
     margin-top: 3rem;
@@ -16,6 +23,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 
+    @include responsiveMax($screen-lg) {
+      grid-template-columns: 100%;
+    }
+
     li {
       background: var(--white);
       border: 1px solid var (--gray-100);
@@ -26,6 +37,15 @@
       display: flex;
       align-items: center;
 
+      @include responsiveMax($screen-sm) {
+        padding: 1.25rem 0.75rem;
+        width: 100%;
+
+        .thumbnail {
+          display: none;
+        }
+      }
+
       img {
         width: 6rem;
         height: 6rem;
@@ -35,6 +55,10 @@
       .episodeDetails {
         flex: 1;
         margin-left: 1rem;
+        
+        @include responsiveMax($screen-sm) {
+          width: 100%;
+        }
 
         a {
           display: block;
@@ -56,6 +80,10 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+
+          @include responsiveMax($screen-xs) {
+            max-width: 60%;
+          }
         }
 
         span {
@@ -112,6 +140,10 @@
 
 .allEpisodes {
   padding-bottom: 2rem;
+
+  @include responsiveMax($screen-md) {
+    display: none;
+  }
 
   table {
     width: 100%;
@@ -170,5 +202,11 @@
         }
       }
     }
+  }
+}
+
+.allEpisodesMobile {
+  @include responsiveMin($screen-md+1) {
+    display: none;
   }
 }

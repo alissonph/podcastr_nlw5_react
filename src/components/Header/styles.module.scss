@@ -1,3 +1,5 @@
+@import '../../styles/global.mixins.scss';
+
 .headerContainer {
   background-color: var(--white);
   height: 6.5rem;
@@ -8,42 +10,83 @@
   padding: 2rem 4rem;
   border-bottom: 1px solid var(--gray-100);
 
+  @include responsiveMax($screen-md) {
+    padding: 2rem 1rem;
+  }
+
+  @include responsiveMax($screen-sm) {
+    max-width: 100vw !important;
+    flex-direction: column;
+  }
+
   .logo {
     cursor: pointer;
+    
+    @include responsiveMax($screen-md) {
+      height: 2rem;
+    }
+    
+    @include responsiveMax($screen-sm) {
+      margin-top: -1rem;
+    }
   }
 
-  p {
-    margin-left: 2rem;
-    padding: 0.25rem 0 0.25rem 2rem;
-    border-left: 1px solid var(--gray-100);
-  }
+  div.container {
+    width: 100%;
 
-  span {
-    margin-left: auto;
-    text-transform: capitalize;
-  }
-  
-  button {
-    background: transparent;
-    border: 0;
-    font-size: 0;
-    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
 
-    transition: filter 0.2s;
-
-    &:hover {
-      filter: brightness(0.7);
+    @include responsiveMax($screen-sm) {
+      padding-top: 0.5rem;
     }
 
-    &.dark {
+    p {
+      margin-left: 2rem;
+      padding: 0.25rem 0 0.25rem 2rem;
+      border-left: 1px solid var(--gray-100);
+
+      @include responsiveMax($screen-sm) {
+        margin-left: 0;
+        padding: 0;
+        border-left: none;
+      }
+    }
+  
+    span {
+      text-transform: capitalize;
+    }
+    
+    button {
+      background: transparent;
+      border: 0;
+      font-size: 0;
+      margin-left: 1rem;
+  
+      transition: filter 0.2s;
+  
+      &:hover {
+        filter: brightness(0.7);
+      }
+  
+      &.dark {
+        img {
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(92deg) brightness(105%) contrast(102%);
+        }
+      }
+  
       img {
-        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(92deg) brightness(105%) contrast(102%);
+        width: 2rem;
+        height: 2rem;
       }
     }
 
-    img {
-      width: 2rem;
-      height: 2rem;
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
   }
 }

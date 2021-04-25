@@ -14,13 +14,16 @@ export function Header() {
       <Link href="/">
         <img className={styles.logo} src="/logo.svg" alt="Podcastr"/>
       </Link>
+      <div className={styles.container}>
+        <p>O melhor para você ouvir, sempre</p>
 
-      <p>O melhor para você ouvir, sempre</p>
-
-      <span>{currentDate}</span>
-      <button type="button" onClick={toggleDarkMode} className={isDarkMode ? styles.dark : ''}>
-        <img src="/theme-mode.svg" alt="Trocar Tema"/>
-      </button>
+        <div>
+          <span>{currentDate}</span>
+          <button type="button" onClick={toggleDarkMode} className={isDarkMode ? styles.dark : ''}>
+            <img src="/theme-mode.svg" alt="Trocar Tema"/>
+          </button>
+        </div>
+      </div>
     </header>
   )
 }
