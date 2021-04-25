@@ -1,7 +1,13 @@
+@import './global.mixins.scss';
+
 .wrapper {
   display: flex;
 
   main {
     flex: 1;
+  }
+
+  @include responsiveMax($screen-md) {
+    flex-direction: column;
   }
 }
