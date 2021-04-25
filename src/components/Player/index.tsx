@@ -9,11 +9,7 @@ import { usePlayer } from '../../contexts/PlayerContext';
 import styles from './styles.module.scss';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
-type PlayerProps = {
-  showMobile?: boolean;
-}
-
-export function Player({ showMobile }: PlayerProps) {
+export function Player() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [progress, setProgress] = useState(0);
 
@@ -70,7 +66,7 @@ export function Player({ showMobile }: PlayerProps) {
   const episode = episodeList[currentEpisodeIndex];
 
   return (
-    <div className={`${styles.playerContainer} ${showMobile ? styles.showMobile : ''}`}>
+    <div className={styles.playerContainer}>
       <header>
         <img src="/playing.svg" alt="Tocando agora"/>
         <strong>Tocando agora</strong>

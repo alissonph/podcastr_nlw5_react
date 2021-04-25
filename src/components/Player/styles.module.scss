@@ -5,10 +5,8 @@
   width: 26.5rem;
   height: 100vh;
 
-  &:not(.showMobile) {
-    @include responsiveMax($screen-md) {
-      display: none;
-    }
+  @include responsiveMax($screen-md) {
+    display: none;
   }
 
   background-color: var(--purple-500);
